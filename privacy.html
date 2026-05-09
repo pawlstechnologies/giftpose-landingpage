@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giftpose – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #27ae60;
+      --green-dark: #1e8a4a;
+      --green-light: #e8f8ef;
+      --green-mid: #d1f0df;
+      --white: #ffffff;
+      --off-white: #f7f8f6;
+      --text: #111111;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center;
+      height: 62px;
+      gap: 20px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--green);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo .logo-icon {
+      width: 32px; height: 32px;
+      background: var(--green-light);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .nav-links {
+      display: flex; gap: 28px;
+      list-style: none;
+      margin: 0 auto;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: color .18s;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      padding: 8px 20px;
+      background: none;
+      border: 1.5px solid var(--green);
+      border-radius: 100px;
+      color: var(--green);
+      font-size: .87rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--green); color: #fff; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      position: fixed; top: 62px; left: 0; right: 0;
+      z-index: 99;
+      box-shadow: var(--shadow);
+    }
+    .mobile-menu a {
+      padding: 14px 5%;
+      font-size: .95rem; font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+    }
+    .mobile-menu a:hover { background: var(--green-light); color: var(--green); }
+    .mobile-menu.open { display: flex; }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      gap: 52px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR NAV ── */
+    .policy-sidebar {
+      position: sticky;
+      top: 82px;
+    }
+    .sidebar-heading {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .sidebar-updated {
+      font-size: .75rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .sidebar-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .sidebar-nav-list li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      font-size: .87rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      transition: background .18s, color .18s, border .18s;
+    }
+    .sidebar-nav-list li a i { font-size: .95rem; }
+    .sidebar-nav-list li a:hover { background: var(--green-light); color: var(--green); }
+    .sidebar-nav-list li a.active {
+      background: var(--green-light);
+      color: var(--green);
+      border-left: 2px solid var(--green);
+      font-weight: 600;
+    }
+
+    /* ── CONTENT ── */
+    .policy-content { min-width: 0; }
+
+    .policy-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--green-mid);
+      margin-bottom: 12px;
+    }
+    .policy-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 12px;
+    }
+    .policy-intro {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 640px;
+    }
+
+    /* Hero cards */
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    .hero-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .hero-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .hero-card.light { background: var(--green-light); border-color: var(--green-mid); }
+    .hero-card .card-icon {
+      font-size: 1.6rem;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .hero-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 7px; }
+    .hero-card p { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Policy section */
+    .policy-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 90px;
+    }
+    .section-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-divider-bar {
+      width: 3px; height: 20px;
+      background: var(--green);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-divider h2 { font-size: 1.1rem; font-weight: 700; }
+    .policy-section > p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* Checklist */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .88rem; color: var(--text); line-height: 1.5;
+    }
+    .check-list li i { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* Use-of-data grid */
+    .use-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .use-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .use-card-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .use-card p { font-size: .83rem; color: var(--text); line-height: 1.5; }
+
+    /* Cookies table */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .cookie-table th {
+      background: var(--off-white);
+      text-align: left;
+      padding: 11px 16px;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .cookie-table td {
+      padding: 11px 16px;
+      font-size: .84rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table td:first-child { font-weight: 600; color: var(--text); }
+    .cookie-table tr:hover td { background: var(--off-white); }
+
+    /* Rights list */
+    .rights-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .right-item {
+      display: flex; align-items: center; gap: 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 12px 18px;
+      font-size: .88rem;
+      transition: background .18s;
+    }
+    .right-item:hover { background: var(--green-light); border-color: var(--green-mid); }
+    .right-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Mobile drawer */
+    .policy-drawer-toggle {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-light);
+      border: 1px solid var(--green-mid);
+      color: var(--green);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: .88rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    .policy-drawer {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .policy-drawer.open { display: block; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .page-wrap {
+        grid-template-columns: 1fr;
+        padding: 28px 16px 60px;
+        gap: 0;
+      }
+      .policy-sidebar { position: static; display: none; }
+      .policy-drawer-toggle { display: flex; }
+      .hero-cards { grid-template-columns: 1fr; }
+      .use-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .policy-title { font-size: 1.5rem; }
+      .cookie-table th, .cookie-table td { padding: 8px 10px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon">🎁</div>
+    Giftpose
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#how-it-works">How it Works</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#contact">Contact Us</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="index.html#features" onclick="closeMenu()">Features</a>
+  <a href="index.html#how-it-works" onclick="closeMenu()">How it Works</a>
+  <a href="index.html#contact" onclick="closeMenu()">Contact Us</a>
+</div>
+
+<!-- PAGE -->
+<div class="page-wrap">
+
+  <!-- Sidebar -->
+  <aside class="policy-sidebar">
+    <div class="sidebar-heading">Policy Navigation</div>
+    <div class="sidebar-updated">Last updated Oct 2023</div>
+    <ul class="sidebar-nav-list">
+      <li><a href="#info-collection" class="active" onclick="setActive(this)"><i class="bi bi-circle"></i> Information Collection</a></li>
+      <li><a href="#use-of-data" onclick="setActive(this)"><i class="bi bi-clock"></i> Use of Data</a></li>
+      <li><a href="#cookies" onclick="setActive(this)"><i class="bi bi-browser-chrome"></i> Cookies</a></li>
+      <li><a href="#your-rights" onclick="setActive(this)"><i class="bi bi-shield-check"></i> Your Rights</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="policy-content">
+
+    <!-- Mobile nav drawer -->
+    <button class="policy-drawer-toggle" onclick="toggleDrawer()">
+      <i class="bi bi-list"></i> Policy Navigation
+    </button>
+    <div class="policy-drawer" id="policy-drawer">
+      <ul class="sidebar-nav-list">
+        <li><a href="#info-collection" onclick="closeDrawer()"><i class="bi bi-circle"></i> Information Collection</a></li>
+        <li><a href="#use-of-data" onclick="closeDrawer()"><i class="bi bi-clock"></i> Use of Data</a></li>
+        <li><a href="#cookies" onclick="closeDrawer()"><i class="bi bi-browser-chrome"></i> Cookies</a></li>
+        <li><a href="#your-rights" onclick="closeDrawer()"><i class="bi bi-shield-check"></i> Your Rights</a></li>
+      </ul>
+    </div>
+
+    <span class="policy-tag">Privacy Standards 2024</span>
+    <h1 class="policy-title">Privacy Policy</h1>
+    <p class="policy-intro">At Giftpose, we take your privacy seriously. This policy describes how we collect, use, and protect your personal information across all our services and compliance tools.</p>
+
+    <!-- Hero Cards -->
+    <div class="hero-cards">
+      <div class="hero-card light">
+        <div class="card-icon"><i class="bi bi-lock"></i></div>
+        <h4>Secure by Design</h4>
+        <p>Your data is encrypted at rest and in transit, following military-grade protocols.</p>
+      </div>
+      <div class="hero-card">
+        <div class="card-icon"><i class="bi bi-eye"></i></div>
+        <h4>Full Transparency</h4>
+        <p>We never sell your data to third parties. You have total control over your information.</p>
+      </div>
+    </div>
+
+    <!-- Information Collection -->
+    <div class="policy-section" id="info-collection">
+      <div class="section-divider">
+        <div class="section-divider-bar"></div>
+        <h2>Information Collection</h2>
+      </div>
+      <p>We collect information that you provide directly to us when you create an account, use our legal documentation tools, or communicate with our support team. This includes:</p>
+      <ul class="check-list">
+        <li><i class="bi bi-check-circle-fill"></i> Personal identifiers such as name and email address.</li>
+        <li><i class="bi bi-check-circle-fill"></i> Organization details including jurisdiction and compliance requirements.</li>
+        <li><i class="bi bi-check-circle-fill"></i> Financial information for subscription billing and transaction history.</li>
+      </ul>
+    </div>
+
+    <!-- Use of Data -->
+    <div class="policy-section" id="use-of-data">
+      <div class="section-divider">
+        <div class="section-divider-bar"></div>
+        <h2>Use of Data</h2>
+      </div>
+      <p>Giftpose uses the collected data for various professional purposes to ensure the highest quality of service and legal accuracy:</p>
+      <div class="use-grid">
+        <div class="use-card">
+          <div class="use-card-label">Service Provision</div>
+          <p>To provide and maintain our Service, including monitoring usage patterns.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-card-label">Communication</div>
+          <p>To contact you with newsletters, marketing or promotional materials.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-card-label">Compliance</div>
+          <p>To detect, prevent and address technical issues or legal discrepancies.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-card-label">Optimization</div>
+          <p>To provide analysis or valuable information so that we can improve the platform.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookies -->
+    <div class="policy-section" id="cookies">
+      <div class="section-divider">
+        <div class="section-divider-bar"></div>
+        <h2>Cookies</h2>
+      </div>
+      <p>We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.</p>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Session Cookies</td>
+            <td>We use these to operate our Service efficiently.</td>
+          </tr>
+          <tr>
+            <td>Preference Cookies</td>
+            <td>We use these to remember your settings and preferences.</td>
+          </tr>
+          <tr>
+            <td>Security Cookies</td>
+            <td>We use these for security purposes and fraud detection.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Your Rights -->
+    <div class="policy-section" id="your-rights">
+      <div class="section-divider">
+        <div class="section-divider-bar"></div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>Giftpose aims to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data. In certain circumstances, you have the following data protection rights:</p>
+      <ul class="rights-list">
+        <li class="right-item"><span class="right-num">1</span> Right to access, update or delete the information we have.</li>
+        <li class="right-item"><span class="right-num">2</span> Right of rectification if information is inaccurate.</li>
+        <li class="right-item"><span class="right-num">3</span> Right to object to our processing of your Personal Data.</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+  function toggleDrawer() {
+    document.getElementById('policy-drawer').classList.toggle('open');
+  }
+  function closeDrawer() {
+    document.getElementById('policy-drawer').classList.remove('open');
+  }
+  function setActive(el) {
+    document.querySelectorAll('.sidebar-nav-list a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  /* Scroll spy */
+  const sections = ['info-collection','use-of-data','cookies','your-rights'];
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 110) current = id;
+    });
+    document.querySelectorAll('.policy-sidebar .sidebar-nav-list a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
