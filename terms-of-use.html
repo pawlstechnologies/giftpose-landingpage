@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use – Giftpose</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+
+    :root {
+      --gp-green-mid:    #2d5c2d;
+      --gp-green-dark:   #1a3a1a;
+      --gp-green-deep:   #0c1e0c;
+      --gp-green-black:  #060f06;
+      --gp-green-pri:    #3a7d3a;
+      --gp-green-acc:    #4caf50;
+      --gp-green-light:  #edf7ed;
+      --gp-green-faint:  #f5fbf5;
+      --gp-text:         #1a1a1a;
+      --gp-muted:        #6b7280;
+      --gp-border:       #e8eaed;
+      --nav-h:           88px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--gp-text);
+      overflow-x: hidden;
+      background: #fff;
+    }
+
+    /* ═══ ISLAND NAVBAR ═══ */
+    .nav-shell {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; padding: 16px 32px; pointer-events: none;
+    }
+    nav.navbar {
+      pointer-events: all; max-width: 1120px; margin: 0 auto;
+      border-radius: 60px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 4px 28px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.05);
+      border: 1px solid rgba(230,235,230,.9);
+      padding: 10px 28px;
+    }
+    body { padding-top: var(--nav-h); }
+    @media (max-width: 991px) {
+      .nav-shell { padding: 0; }
+      nav.navbar { border-radius: 0; max-width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,.08); padding: 12px 20px; }
+      body { padding-top: 68px; }
+      :root { --nav-h: 68px; }
+    }
+    .navbar-brand {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.15rem;
+      color: var(--gp-text) !important; text-decoration: none;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #4caf50 0%, #2d5c2d 100%);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+    }
+    .nav-link {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: .9rem;
+      color: #333 !important; padding: 6px 14px !important;
+      border-radius: 20px; transition: background .2s, color .2s;
+    }
+    .nav-link:hover { background: var(--gp-green-light); color: var(--gp-green-pri) !important; }
+    .btn-nav-cta {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .88rem;
+      color: var(--gp-green-pri) !important; border: 1.5px solid var(--gp-green-pri);
+      border-radius: 24px; padding: 8px 22px !important;
+      transition: all .22s; white-space: nowrap;
+    }
+    .btn-nav-cta:hover { background: var(--gp-green-pri); color: #fff !important; }
+
+    /* ═══ FOOTER ═══ */
+    .footer { background: #fff; border-top: 1px solid #f0f0f0; padding: 54px 0 28px; }
+    .footer-brand {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--gp-text); text-decoration: none; margin-bottom: 12px;
+    }
+    .footer-tagline { font-size: .84rem; color: var(--gp-muted); line-height: 1.58; max-width: 220px; }
+    .footer .col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .09em; color: #bbb; margin-bottom: 14px;
+    }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a { font-size: .88rem; color: #555; text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--gp-green-pri); }
+    .socials { display: flex; gap: 10px; }
+    .soc-icon {
+      width: 36px; height: 36px; border: 1.5px solid var(--gp-border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #666; text-decoration: none; font-size: 1rem; transition: all .2s;
+    }
+    .soc-icon:hover { border-color: var(--gp-green-pri); color: var(--gp-green-pri); }
+    .footer-bottom {
+      border-top: 1px solid #f0f0f0; margin-top: 38px; padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom span, .footer-bottom a { font-size: .81rem; color: #bbb; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gp-green-pri); }
+    .footer-bottom .legal-links { display: flex; gap: 20px; }
+
+    /* ═══ LEGAL PAGES ═══ */
+    .legal-banner {
+      background: linear-gradient(135deg, #2d5c2d 0%, #1a3a1a 100%);
+      padding: 56px 0 50px; position: relative; overflow: hidden;
+    }
+    .legal-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(76,175,80,.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .legal-banner .breadcrumb-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 14px;
+    }
+    .legal-banner .breadcrumb-row a { color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .legal-banner .breadcrumb-row a:hover { color: rgba(255,255,255,.85); }
+    .legal-banner .breadcrumb-row span { color: rgba(255,255,255,.85); font-weight: 600; }
+    .legal-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+      font-size: 2rem; color: #fff; margin-bottom: 8px;
+    }
+    .legal-banner p { font-size: .9rem; color: rgba(255,255,255,.6); margin: 0; }
+    .legal-tab-bar {
+      background: #fff; border-bottom: 1px solid #f0f0f0;
+      position: sticky; top: var(--nav-h); z-index: 100;
+    }
+    .legal-tab-bar .container { display: flex; }
+    .legal-tab {
+      padding: 16px 28px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: .88rem;
+      color: #999; text-decoration: none; white-space: nowrap;
+      border-bottom: 2.5px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .legal-tab:hover { color: var(--gp-green-pri); }
+    .legal-tab.active { color: var(--gp-green-pri); border-bottom-color: var(--gp-green-pri); }
+    .legal-body { padding: 56px 0 88px; }
+    /* sidebar */
+    .legal-sidebar { position: sticky; top: calc(var(--nav-h) + 64px); }
+    .sidebar-nav-title {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .09em; color: #bbb; margin-bottom: 4px;
+    }
+    .sidebar-updated { font-size: .77rem; color: #ccc; margin-bottom: 22px; }
+    .s-nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 0; border-bottom: 1px solid #f5f5f5;
+      text-decoration: none; color: #555; font-size: .85rem;
+      transition: color .18s;
+    }
+    .s-nav-item:hover { color: var(--gp-green-pri); }
+    .s-nav-item.active { color: var(--gp-green-pri); font-weight: 600; }
+    .s-nav-item .bar { width: 3px; height: 20px; border-radius: 2px; background: transparent; flex-shrink: 0; transition: background .2s; }
+    .s-nav-item.active .bar { background: var(--gp-green-pri); }
+    .s-nav-item .ico {
+      width: 30px; height: 30px; background: #f5f5f5; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; color: #999; flex-shrink: 0;
+    }
+    .s-nav-item.active .ico { background: var(--gp-green-light); color: var(--gp-green-pri); }
+    /* content */
+    .legal-content > h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.55rem;
+      color: var(--gp-text); margin-bottom: 14px;
+    }
+    .legal-content .intro-txt { font-size: .93rem; color: #666; line-height: 1.72; }
+    .legal-content hr { border-color: #f0f0f0; margin: 28px 0 38px; }
+    .l-section { margin-bottom: 50px; scroll-margin-top: 160px; }
+    .l-section h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.15rem;
+      margin-bottom: 16px; color: var(--gp-text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sec-num {
+      width: 28px; height: 28px; background: var(--gp-green-light); color: var(--gp-green-pri);
+      border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .legal-content p { font-size: .91rem; color: #4a4a4a; line-height: 1.76; margin-bottom: 14px; }
+    .legal-content p:last-child { margin-bottom: 0; }
+    .info-box {
+      background: var(--gp-green-faint); border: 1px solid #d5ecd5;
+      border-left: 4px solid var(--gp-green-acc); border-radius: 0 12px 12px 0;
+      padding: 18px 22px; margin: 18px 0;
+      font-size: .88rem; color: #3d6b3d; line-height: 1.62;
+    }
+    .rule-box { border: 1px solid var(--gp-border); border-radius: 14px; padding: 24px 28px; margin: 18px 0; }
+    .rule-box p { margin-bottom: 10px; font-size: .88rem; color: #555; }
+    .rule-box p:last-child { margin-bottom: 0; }
+    .rule-box p::before { content: '—'; margin-right: 8px; color: #ccc; }
+    .check-list { list-style: none; padding: 0; margin: 14px 0; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: .88rem; color: #4a4a4a; line-height: 1.58; }
+    .check-list li .chk {
+      min-width: 22px; height: 22px; background: var(--gp-green-acc); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: .68rem; margin-top: 1px; flex-shrink: 0;
+    }
+    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    @media (max-width: 576px) { .data-grid { grid-template-columns: 1fr; } }
+    .data-card { background: var(--gp-green-faint); border: 1px solid #deeede; border-radius: 12px; padding: 18px 20px; }
+    .data-card h6 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .86rem; color: var(--gp-green-pri); margin-bottom: 6px; }
+    .data-card p { font-size: .83rem; color: #556; margin: 0; line-height: 1.55; }
+    .cross-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 24px; padding: 12px 22px;
+      background: var(--gp-green-light); color: var(--gp-green-pri);
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .88rem;
+      border-radius: 30px; text-decoration: none; transition: background .2s, transform .18s;
+    }
+    .cross-link:hover { background: #d5eed5; transform: translateY(-2px); color: var(--gp-green-dark); }
+    @media (max-width: 991px) { .legal-banner h1 { font-size: 1.55rem; } }
+  </style>
+</head>
+<body>
+
+<div class="nav-shell">
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon">🎁</div>Giftpose
+    </a>
+    <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1 mt-2 mt-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html" style="color:var(--gp-green-pri)!important;background:var(--gp-green-light);">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#features" >Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#how-it-works" >How it Works</a></li>
+      </ul>
+      <a class="nav-link btn-nav-cta ms-lg-2 mt-2 mt-lg-0" href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+</div>
+
+<!-- BANNER -->
+<div class="legal-banner">
+  <div class="container">
+    <div class="breadcrumb-row">
+      <a href="index.html">Home</a>
+      <i class="bi bi-chevron-right" style="font-size:.7rem;"></i>
+      <span>Terms of Use</span>
+    </div>
+    <h1>Terms of Use</h1>
+    <p>Last updated October 2023 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="legal-tab-bar">
+  <div class="container">
+    <a href="privacy-policy.html" class="legal-tab">Privacy Policy</a>
+    <a href="terms-of-use.html" class="legal-tab active">Terms of Use</a>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="legal-body">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="legal-sidebar">
+          <div class="sidebar-nav-title">Navigation</div>
+          <div class="sidebar-updated">Last updated Oct 2023</div>
+          <a class="s-nav-item active" href="#" data-target="tu-accept"><span class="bar"></span><div class="ico"><i class="bi bi-file-text"></i></div>1. Acceptance</a>
+          <a class="s-nav-item" href="#" data-target="tu-accounts"><span class="bar"></span><div class="ico"><i class="bi bi-person-badge"></i></div>2. Accounts</a>
+          <a class="s-nav-item" href="#" data-target="tu-conduct"><span class="bar"></span><div class="ico"><i class="bi bi-person-check"></i></div>3. User Conduct</a>
+          <a class="s-nav-item" href="#" data-target="tu-gifts"><span class="bar"></span><div class="ico"><i class="bi bi-gift"></i></div>4. Gifting Rules</a>
+          <a class="s-nav-item" href="#" data-target="tu-ip"><span class="bar"></span><div class="ico"><i class="bi bi-shield-lock"></i></div>5. Intellectual Property</a>
+          <a class="s-nav-item" href="#" data-target="tu-disclaimer"><span class="bar"></span><div class="ico"><i class="bi bi-exclamation-circle"></i></div>6. Disclaimers</a>
+          <a class="s-nav-item" href="#" data-target="tu-liability"><span class="bar"></span><div class="ico"><i class="bi bi-exclamation-triangle"></i></div>7. Liability</a>
+          <a class="s-nav-item" href="#" data-target="tu-termination"><span class="bar"></span><div class="ico"><i class="bi bi-x-circle"></i></div>8. Termination</a>
+          <a class="s-nav-item" href="#" data-target="tu-changes"><span class="bar"></span><div class="ico"><i class="bi bi-arrow-repeat"></i></div>9. Changes</a>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-lg-9 legal-content">
+        <h2>Terms of Use</h2>
+        <p class="intro-txt">These Terms govern your access to and use of the Giftpose platform, including our mobile application and website. By accessing or using the Platform, you confirm you are at least 18 years old and agree to be bound by these Terms.</p>
+        <hr>
+
+        <div class="l-section" id="tu-accept">
+          <h3><span class="sec-num">1</span> Acceptance of Terms</h3>
+          <p>By creating a Giftpose account or using any part of our Platform, you enter into a binding legal agreement with Giftpose Ltd ("Giftpose", "we", "our", or "us"). These Terms constitute the entire agreement between you and Giftpose with respect to your use of the Platform.</p>
+          <div class="info-box">If you do not agree to these Terms, you must not use or access the Platform. Your continued use constitutes ongoing acceptance of the current Terms and any updates we may publish.</div>
+          <p>These Terms should be read together with our <a href="privacy-policy.html" style="color:var(--gp-green-pri);font-weight:600;">Privacy Policy</a>, which explains how we handle your personal data.</p>
+        </div>
+
+        <div class="l-section" id="tu-accounts">
+          <h3><span class="sec-num">2</span> Account Registration</h3>
+          <p>To access core features of the Platform, you must register for a Giftpose account. When registering, you agree to:</p>
+          <ul class="check-list">
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Provide accurate, current, and complete information during registration.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Keep your account credentials confidential and not share them with others.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Notify us immediately of any unauthorised use of your account.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Maintain only one account per person (duplicate accounts may be removed).</li>
+          </ul>
+          <p>You are responsible for all activity that occurs under your account. Giftpose will not be liable for any loss arising from your failure to maintain account security.</p>
+        </div>
+
+        <div class="l-section" id="tu-conduct">
+          <h3><span class="sec-num">3</span> User Conduct</h3>
+          <p>You agree to use the Platform only for lawful purposes and in a manner that does not infringe the rights of others. The following behaviours are strictly prohibited:</p>
+          <div class="rule-box">
+            <p>Harassing, abusing, threatening, or causing distress to any other user.</p>
+            <p>Posting misleading, false, or fraudulent gift listings.</p>
+            <p>Transmitting spam, unsolicited communications, or malicious software.</p>
+            <p>Attempting to gain unauthorised access to our systems, networks, or databases.</p>
+            <p>Scraping or using automated tools to extract Platform data without permission.</p>
+            <p>Impersonating any person or entity or misrepresenting your affiliation.</p>
+            <p>Using the Platform for any commercial purpose without prior written consent.</p>
+          </div>
+          <p>Violation of these rules may result in immediate suspension or permanent termination of your account without notice.</p>
+        </div>
+
+        <div class="l-section" id="tu-gifts">
+          <h3><span class="sec-num">4</span> Gifting Rules &amp; Responsibilities</h3>
+          <p>Giftpose is a free gifting platform. All items listed must be offered genuinely at no cost to the recipient.</p>
+          <ul class="check-list">
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Items must be legal to own and transfer in the relevant jurisdiction.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Listings must accurately represent the item's condition (new, used, damaged, etc.).</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Items must not be counterfeit, stolen, or subject to recall.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Prohibited items include weapons, controlled substances, hazardous materials, and adult content.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Donors are solely responsible for ensuring items are safe and fit for gifting.</li>
+          </ul>
+          <p>Giftpose acts as an intermediary only. We are not a party to any gifting transaction and accept no responsibility for the condition, safety, or legality of items exchanged between users.</p>
+        </div>
+
+        <div class="l-section" id="tu-ip">
+          <h3><span class="sec-num">5</span> Intellectual Property</h3>
+          <p>The Giftpose name, logo, Platform design, software, and all associated content are the exclusive property of Giftpose Ltd and its licensors, protected by UK, EU, and international intellectual property laws.</p>
+          <p>When you post content on the Platform, you grant Giftpose a worldwide, royalty-free, non-exclusive licence to use, reproduce, and display that content solely for the purpose of operating and promoting the Platform.</p>
+          <div class="info-box">You retain ownership of content you create. Giftpose will never sell your content to third parties or use it in advertising without your explicit consent.</div>
+        </div>
+
+        <div class="l-section" id="tu-disclaimer">
+          <h3><span class="sec-num">6</span> Disclaimers</h3>
+          <p>The Platform is provided "as is" and "as available" without any warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability or fitness for a particular purpose.</p>
+          <div class="rule-box">
+            <p>The Platform will be uninterrupted, timely, secure, or error-free at all times.</p>
+            <p>Any gifts or information obtained through the Platform will meet your expectations.</p>
+            <p>Defects in the Platform will be corrected on any specific timeline.</p>
+            <p>The Platform is free of viruses or other harmful components.</p>
+          </div>
+        </div>
+
+        <div class="l-section" id="tu-liability">
+          <h3><span class="sec-num">7</span> Limitation of Liability</h3>
+          <p>To the fullest extent permitted by applicable law, Giftpose and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p>
+          <ul class="check-list">
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Your access to, use of, or inability to access or use the Platform.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Any conduct or content of any third party on the Platform.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Any content obtained from the Platform.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Unauthorised access, use, or alteration of your transmissions or content.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Any item exchanged between users, including property damage or personal injury.</li>
+          </ul>
+          <p>Our total aggregate liability shall not exceed the greater of £100 GBP or the amounts you have paid to Giftpose in the past 12 months.</p>
+        </div>
+
+        <div class="l-section" id="tu-termination">
+          <h3><span class="sec-num">8</span> Termination</h3>
+          <p>Giftpose reserves the right to suspend or terminate your account at any time, with or without cause, including for violation of these Terms. You may close your account at any time through the in-app settings.</p>
+          <p>Upon termination, your right to use the Platform ceases immediately. Provisions that by their nature should survive termination shall remain in effect, including intellectual property, disclaimers, and limitation of liability clauses.</p>
+        </div>
+
+        <div class="l-section" id="tu-changes">
+          <h3><span class="sec-num">9</span> Changes to Terms</h3>
+          <p>We may revise these Terms at any time. When we do, we will update the "Last updated" date and, where material changes are made, notify you via email or in-app notification.</p>
+          <p>Your continued use of the Platform after changes take effect constitutes your acceptance of the revised Terms.</p>
+          <a href="privacy-policy.html" class="cross-link">
+            <i class="bi bi-arrow-left"></i> Read our Privacy Policy
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand" href="index.html">
+          <div class="brand-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#4caf50,#2d5c2d);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🎁</div>
+          Giftpose
+        </a>
+        <p class="footer-tagline">Turn the items you don't need into meaningful gifts. We help you give with purpose and simplify the art of giving.</p>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="col-title">Platform</div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it Works</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="col-title">Support</div>
+        <ul class="footer-links">
+          <li><a href="index.html#contact">Contact Us</a></li>
+          <li><a href="#">Find it (deals)</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="col-title">Connect</div>
+        <div class="socials">
+          <a href="#" class="soc-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="soc-icon"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="soc-icon"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Giftpose. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Scroll-spy
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.s-nav-item').forEach(a => {
+          a.classList.toggle('active', (a.dataset.target || '') === e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  document.querySelectorAll('.l-section[id]').forEach(el => spy.observe(el));
+
+  // Sidebar click
+  document.querySelectorAll('.s-nav-item').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const el = document.getElementById(this.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

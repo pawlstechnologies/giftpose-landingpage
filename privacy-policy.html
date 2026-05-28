@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Giftpose</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+
+    :root {
+      --gp-green-mid:    #2d5c2d;
+      --gp-green-dark:   #1a3a1a;
+      --gp-green-deep:   #0c1e0c;
+      --gp-green-black:  #060f06;
+      --gp-green-pri:    #3a7d3a;
+      --gp-green-acc:    #4caf50;
+      --gp-green-light:  #edf7ed;
+      --gp-green-faint:  #f5fbf5;
+      --gp-text:         #1a1a1a;
+      --gp-muted:        #6b7280;
+      --gp-border:       #e8eaed;
+      --nav-h:           88px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--gp-text);
+      overflow-x: hidden;
+      background: #fff;
+    }
+
+    /* ═══ ISLAND NAVBAR ═══ */
+    .nav-shell {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; padding: 16px 32px; pointer-events: none;
+    }
+    nav.navbar {
+      pointer-events: all; max-width: 1120px; margin: 0 auto;
+      border-radius: 60px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 4px 28px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.05);
+      border: 1px solid rgba(230,235,230,.9);
+      padding: 10px 28px;
+    }
+    body { padding-top: var(--nav-h); }
+    @media (max-width: 991px) {
+      .nav-shell { padding: 0; }
+      nav.navbar { border-radius: 0; max-width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,.08); padding: 12px 20px; }
+      body { padding-top: 68px; }
+      :root { --nav-h: 68px; }
+    }
+    .navbar-brand {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.15rem;
+      color: var(--gp-text) !important; text-decoration: none;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #4caf50 0%, #2d5c2d 100%);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+    }
+    .nav-link {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: .9rem;
+      color: #333 !important; padding: 6px 14px !important;
+      border-radius: 20px; transition: background .2s, color .2s;
+    }
+    .nav-link:hover { background: var(--gp-green-light); color: var(--gp-green-pri) !important; }
+    .btn-nav-cta {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .88rem;
+      color: var(--gp-green-pri) !important; border: 1.5px solid var(--gp-green-pri);
+      border-radius: 24px; padding: 8px 22px !important;
+      transition: all .22s; white-space: nowrap;
+    }
+    .btn-nav-cta:hover { background: var(--gp-green-pri); color: #fff !important; }
+
+    /* ═══ FOOTER ═══ */
+    .footer { background: #fff; border-top: 1px solid #f0f0f0; padding: 54px 0 28px; }
+    .footer-brand {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--gp-text); text-decoration: none; margin-bottom: 12px;
+    }
+    .footer-tagline { font-size: .84rem; color: var(--gp-muted); line-height: 1.58; max-width: 220px; }
+    .footer .col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .09em; color: #bbb; margin-bottom: 14px;
+    }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a { font-size: .88rem; color: #555; text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--gp-green-pri); }
+    .socials { display: flex; gap: 10px; }
+    .soc-icon {
+      width: 36px; height: 36px; border: 1.5px solid var(--gp-border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #666; text-decoration: none; font-size: 1rem; transition: all .2s;
+    }
+    .soc-icon:hover { border-color: var(--gp-green-pri); color: var(--gp-green-pri); }
+    .footer-bottom {
+      border-top: 1px solid #f0f0f0; margin-top: 38px; padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom span, .footer-bottom a { font-size: .81rem; color: #bbb; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gp-green-pri); }
+    .footer-bottom .legal-links { display: flex; gap: 20px; }
+
+    /* ═══ LEGAL PAGES ═══ */
+    .legal-banner {
+      background: linear-gradient(135deg, #2d5c2d 0%, #1a3a1a 100%);
+      padding: 56px 0 50px; position: relative; overflow: hidden;
+    }
+    .legal-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(76,175,80,.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .legal-banner .breadcrumb-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 14px;
+    }
+    .legal-banner .breadcrumb-row a { color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .legal-banner .breadcrumb-row a:hover { color: rgba(255,255,255,.85); }
+    .legal-banner .breadcrumb-row span { color: rgba(255,255,255,.85); font-weight: 600; }
+    .legal-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+      font-size: 2rem; color: #fff; margin-bottom: 8px;
+    }
+    .legal-banner p { font-size: .9rem; color: rgba(255,255,255,.6); margin: 0; }
+    .legal-tab-bar {
+      background: #fff; border-bottom: 1px solid #f0f0f0;
+      position: sticky; top: var(--nav-h); z-index: 100;
+    }
+    .legal-tab-bar .container { display: flex; }
+    .legal-tab {
+      padding: 16px 28px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: .88rem;
+      color: #999; text-decoration: none; white-space: nowrap;
+      border-bottom: 2.5px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .legal-tab:hover { color: var(--gp-green-pri); }
+    .legal-tab.active { color: var(--gp-green-pri); border-bottom-color: var(--gp-green-pri); }
+    .legal-body { padding: 56px 0 88px; }
+    /* sidebar */
+    .legal-sidebar { position: sticky; top: calc(var(--nav-h) + 64px); }
+    .sidebar-nav-title {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .09em; color: #bbb; margin-bottom: 4px;
+    }
+    .sidebar-updated { font-size: .77rem; color: #ccc; margin-bottom: 22px; }
+    .s-nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 0; border-bottom: 1px solid #f5f5f5;
+      text-decoration: none; color: #555; font-size: .85rem;
+      transition: color .18s;
+    }
+    .s-nav-item:hover { color: var(--gp-green-pri); }
+    .s-nav-item.active { color: var(--gp-green-pri); font-weight: 600; }
+    .s-nav-item .bar { width: 3px; height: 20px; border-radius: 2px; background: transparent; flex-shrink: 0; transition: background .2s; }
+    .s-nav-item.active .bar { background: var(--gp-green-pri); }
+    .s-nav-item .ico {
+      width: 30px; height: 30px; background: #f5f5f5; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; color: #999; flex-shrink: 0;
+    }
+    .s-nav-item.active .ico { background: var(--gp-green-light); color: var(--gp-green-pri); }
+    /* content */
+    .legal-content > h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.55rem;
+      color: var(--gp-text); margin-bottom: 14px;
+    }
+    .legal-content .intro-txt { font-size: .93rem; color: #666; line-height: 1.72; }
+    .legal-content hr { border-color: #f0f0f0; margin: 28px 0 38px; }
+    .l-section { margin-bottom: 50px; scroll-margin-top: 160px; }
+    .l-section h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.15rem;
+      margin-bottom: 16px; color: var(--gp-text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sec-num {
+      width: 28px; height: 28px; background: var(--gp-green-light); color: var(--gp-green-pri);
+      border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .legal-content p { font-size: .91rem; color: #4a4a4a; line-height: 1.76; margin-bottom: 14px; }
+    .legal-content p:last-child { margin-bottom: 0; }
+    .info-box {
+      background: var(--gp-green-faint); border: 1px solid #d5ecd5;
+      border-left: 4px solid var(--gp-green-acc); border-radius: 0 12px 12px 0;
+      padding: 18px 22px; margin: 18px 0;
+      font-size: .88rem; color: #3d6b3d; line-height: 1.62;
+    }
+    .rule-box { border: 1px solid var(--gp-border); border-radius: 14px; padding: 24px 28px; margin: 18px 0; }
+    .rule-box p { margin-bottom: 10px; font-size: .88rem; color: #555; }
+    .rule-box p:last-child { margin-bottom: 0; }
+    .rule-box p::before { content: '—'; margin-right: 8px; color: #ccc; }
+    .check-list { list-style: none; padding: 0; margin: 14px 0; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: .88rem; color: #4a4a4a; line-height: 1.58; }
+    .check-list li .chk {
+      min-width: 22px; height: 22px; background: var(--gp-green-acc); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: .68rem; margin-top: 1px; flex-shrink: 0;
+    }
+    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+    @media (max-width: 576px) { .data-grid { grid-template-columns: 1fr; } }
+    .data-card { background: var(--gp-green-faint); border: 1px solid #deeede; border-radius: 12px; padding: 18px 20px; }
+    .data-card h6 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .86rem; color: var(--gp-green-pri); margin-bottom: 6px; }
+    .data-card p { font-size: .83rem; color: #556; margin: 0; line-height: 1.55; }
+    .cross-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 24px; padding: 12px 22px;
+      background: var(--gp-green-light); color: var(--gp-green-pri);
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .88rem;
+      border-radius: 30px; text-decoration: none; transition: background .2s, transform .18s;
+    }
+    .cross-link:hover { background: #d5eed5; transform: translateY(-2px); color: var(--gp-green-dark); }
+    @media (max-width: 991px) { .legal-banner h1 { font-size: 1.55rem; } }
+  </style>
+</head>
+<body>
+
+<div class="nav-shell">
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon">🎁</div>Giftpose
+    </a>
+    <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1 mt-2 mt-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html" style="color:var(--gp-green-pri)!important;background:var(--gp-green-light);">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#features" >Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#how-it-works" >How it Works</a></li>
+      </ul>
+      <a class="nav-link btn-nav-cta ms-lg-2 mt-2 mt-lg-0" href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+</div>
+
+<!-- BANNER -->
+<div class="legal-banner">
+  <div class="container">
+    <div class="breadcrumb-row">
+      <a href="index.html">Home</a>
+      <i class="bi bi-chevron-right" style="font-size:.7rem;"></i>
+      <span>Privacy Policy</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated October 2023 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="legal-tab-bar">
+  <div class="container">
+    <a href="privacy-policy.html" class="legal-tab active">Privacy Policy</a>
+    <a href="terms-of-use.html" class="legal-tab">Terms of Use</a>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="legal-body">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="legal-sidebar">
+          <div class="sidebar-nav-title">Navigation</div>
+          <div class="sidebar-updated">Last updated Oct 2023</div>
+          <a class="s-nav-item active" href="#" data-target="pp-intro"><span class="bar"></span><div class="ico"><i class="bi bi-info-circle"></i></div>1. Overview</a>
+          <a class="s-nav-item" href="#" data-target="pp-collect"><span class="bar"></span><div class="ico"><i class="bi bi-database"></i></div>2. What We Collect</a>
+          <a class="s-nav-item" href="#" data-target="pp-use"><span class="bar"></span><div class="ico"><i class="bi bi-gear"></i></div>3. How We Use It</a>
+          <a class="s-nav-item" href="#" data-target="pp-share"><span class="bar"></span><div class="ico"><i class="bi bi-share"></i></div>4. Sharing</a>
+          <a class="s-nav-item" href="#" data-target="pp-retention"><span class="bar"></span><div class="ico"><i class="bi bi-clock-history"></i></div>5. Data Retention</a>
+          <a class="s-nav-item" href="#" data-target="pp-rights"><span class="bar"></span><div class="ico"><i class="bi bi-shield-check"></i></div>6. Your Rights</a>
+          <a class="s-nav-item" href="#" data-target="pp-cookies"><span class="bar"></span><div class="ico"><i class="bi bi-cookie"></i></div>7. Cookies</a>
+          <a class="s-nav-item" href="#" data-target="pp-contact"><span class="bar"></span><div class="ico"><i class="bi bi-envelope"></i></div>8. Contact</a>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-lg-9 legal-content">
+        <h2>Privacy Policy</h2>
+        <p class="intro-txt">Your privacy matters to us. This policy explains what information Giftpose collects when you use our platform, how we use it, and the choices you have regarding your data.</p>
+        <hr>
+
+        <div class="l-section" id="pp-intro">
+          <h3><span class="sec-num">1</span> Overview</h3>
+          <p>Giftpose ("we", "our", or "us") operates a community gifting platform connecting people who have items they no longer need with people who could use them. This Privacy Policy applies to our mobile application, website, and all associated services (collectively, the "Platform").</p>
+          <div class="info-box">By using the Giftpose Platform, you agree to the collection and use of information as described in this policy. If you do not agree, please discontinue use of the Platform.</div>
+          <p>We are committed to handling your personal data responsibly and in accordance with applicable data protection laws, including the UK GDPR, EU GDPR, and the California Consumer Privacy Act (CCPA) where applicable.</p>
+        </div>
+
+        <div class="l-section" id="pp-collect">
+          <h3><span class="sec-num">2</span> Information We Collect</h3>
+          <p>We collect information you provide directly, information generated automatically when you use the Platform, and information from third-party sources where permitted.</p>
+          <div class="data-grid">
+            <div class="data-card"><h6><i class="bi bi-person me-1"></i> Account Information</h6><p>Name, email address, profile photo, and login credentials when you register.</p></div>
+            <div class="data-card"><h6><i class="bi bi-camera me-1"></i> Gift Listings</h6><p>Photos, descriptions, item categories, and location data attached to gifts you post.</p></div>
+            <div class="data-card"><h6><i class="bi bi-geo-alt me-1"></i> Location Data</h6><p>Approximate or precise location to connect you with nearby donors and recipients.</p></div>
+            <div class="data-card"><h6><i class="bi bi-phone me-1"></i> Device &amp; Usage</h6><p>IP address, device type, OS, app version, pages visited, and interactions with the Platform.</p></div>
+          </div>
+          <p>We do not knowingly collect personal data from children under 13. If you believe a child has submitted personal data, please contact us immediately.</p>
+        </div>
+
+        <div class="l-section" id="pp-use">
+          <h3><span class="sec-num">3</span> How We Use Your Information</h3>
+          <p>We use your information to operate and improve the Platform. Specifically, we use it to:</p>
+          <ul class="check-list">
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Create and manage your Giftpose account and profile.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Facilitate connections between donors and recipients.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Send you gift alerts, notifications, and platform updates.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Personalise your feed and recommend relevant gifts near you.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Detect, investigate, and prevent fraud, abuse, or policy violations.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Comply with applicable legal obligations.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> Analyse usage patterns to improve product features and user experience.</li>
+          </ul>
+          <p>We do not sell your personal data to third parties, and we will never use your data to display third-party advertisements without your explicit consent.</p>
+        </div>
+
+        <div class="l-section" id="pp-share">
+          <h3><span class="sec-num">4</span> Sharing Your Information</h3>
+          <p>We share your information only in the limited circumstances described below:</p>
+          <div class="rule-box">
+            <p><strong>Other Users:</strong> Your display name, profile photo, and listing details are visible to other users as part of the gifting experience.</p>
+            <p><strong>Service Providers:</strong> Trusted vendors (hosting, analytics, customer support) who process data on our behalf under strict confidentiality obligations.</p>
+            <p><strong>Legal Requirements:</strong> When required by law, court order, or to protect the safety of our users or the public.</p>
+            <p><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, subject to standard confidentiality protections.</p>
+          </div>
+        </div>
+
+        <div class="l-section" id="pp-retention">
+          <h3><span class="sec-num">5</span> Data Retention</h3>
+          <p>We retain your personal data for as long as your account is active or as necessary to provide our services. You may request deletion of your account and associated data at any time via in-app settings or by contacting us.</p>
+          <p>Certain data may be retained for longer periods where we have a legitimate legal or regulatory basis — such as transaction records, fraud prevention logs, or where required by applicable law.</p>
+          <p>Anonymised and aggregated data (which cannot identify you) may be retained indefinitely for analytical and product improvement purposes.</p>
+        </div>
+
+        <div class="l-section" id="pp-rights">
+          <h3><span class="sec-num">6</span> Your Rights</h3>
+          <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+          <ul class="check-list">
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Correction:</strong> Ask us to correct inaccurate or incomplete data.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Deletion:</strong> Request erasure of your personal data ("right to be forgotten").</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Objection:</strong> Object to processing based on legitimate interests or for direct marketing.</li>
+            <li><span class="chk"><i class="bi bi-check-lg"></i></span> <strong>Restriction:</strong> Request that we limit processing of your data in certain circumstances.</li>
+          </ul>
+          <p>To exercise any of these rights, contact us at <strong>privacy@giftpose.com</strong>. We will respond within 30 days.</p>
+        </div>
+
+        <div class="l-section" id="pp-cookies">
+          <h3><span class="sec-num">7</span> Cookies &amp; Tracking</h3>
+          <p>Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyse traffic, and remember your preferences.</p>
+          <div class="rule-box">
+            <p><strong>Essential Cookies:</strong> Required for the Platform to function correctly. Cannot be disabled.</p>
+            <p><strong>Analytics Cookies:</strong> Help us understand how users interact with the Platform. Data is aggregated and anonymised.</p>
+            <p><strong>Preference Cookies:</strong> Store your settings such as language and region preferences.</p>
+          </div>
+          <p>You can manage or disable non-essential cookies through your browser settings. Note that disabling cookies may affect certain features of the Platform.</p>
+        </div>
+
+        <div class="l-section" id="pp-contact">
+          <h3><span class="sec-num">8</span> Contact &amp; Updates</h3>
+          <p>If you have questions about this Privacy Policy or how your data is handled, please contact our Data Protection team:</p>
+          <div class="info-box">
+            <strong>Giftpose Data Protection</strong><br>
+            Email: privacy@giftpose.com<br>
+            Address: 123 Gifting Lane, London, EC1A 1BB, United Kingdom
+          </div>
+          <p>We may update this policy from time to time. We will notify you of significant changes by email or through a prominent notice on the Platform.</p>
+          <a href="terms-of-use.html" class="cross-link">
+            Read our Terms of Use <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand" href="index.html">
+          <div class="brand-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#4caf50,#2d5c2d);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🎁</div>
+          Giftpose
+        </a>
+        <p class="footer-tagline">Turn the items you don't need into meaningful gifts. We help you give with purpose and simplify the art of giving.</p>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="col-title">Platform</div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it Works</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="col-title">Support</div>
+        <ul class="footer-links">
+          <li><a href="index.html#contact">Contact Us</a></li>
+          <li><a href="#">Find it (deals)</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="col-title">Connect</div>
+        <div class="socials">
+          <a href="#" class="soc-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="soc-icon"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="soc-icon"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Giftpose. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Scroll-spy
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.s-nav-item').forEach(a => {
+          a.classList.toggle('active', (a.dataset.target || '') === e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  document.querySelectorAll('.l-section[id]').forEach(el => spy.observe(el));
+
+  // Sidebar click
+  document.querySelectorAll('.s-nav-item').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const el = document.getElementById(this.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
