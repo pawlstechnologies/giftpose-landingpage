@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giftpose – Turn items you don't need into meaningful gifts</title>
+  <link rel="icon" type="image/png" href="assets/giftpose-logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -71,21 +72,30 @@
     }
 
     .navbar-brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 9px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--gp-text) !important;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
       text-decoration: none;
     }
-    .brand-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, #4caf50 0%, #2d5c2d 100%);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.05rem;
+    .brand-logo {
+      display: block;
+      height: clamp(32px, 5.5vw, 46px);
+      width: auto;
+      max-width: min(176px, 46vw);
+      object-fit: contain;
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .navbar-brand:hover .brand-logo {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 991px) {
+      .brand-logo { height: 36px; max-width: min(148px, 48vw); }
+    }
+    @media (max-width: 380px) {
+      .brand-logo { height: 32px; max-width: 128px; }
     }
     .nav-link {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -375,10 +385,19 @@
       padding: 54px 0 28px;
     }
     .footer-brand {
-      display: flex; align-items: center; gap: 9px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800; font-size: 1.1rem;
-      color: var(--gp-text); text-decoration: none; margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+    .footer-brand .brand-logo {
+      height: clamp(42px, 7vw, 56px);
+      max-width: min(210px, 70vw);
+    }
+    .footer-brand:hover .brand-logo {
+      opacity: .9;
+      transform: translateY(-1px);
     }
     .footer-tagline { font-size: .84rem; color: var(--gp-muted); line-height: 1.58; max-width: 220px; }
     .footer .col-title {
@@ -619,9 +638,8 @@
 ═══════════════════════════════════════ -->
 <div class="nav-shell">
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#" onclick="showPage('home'); return false;">
-      <div class="brand-icon">🎁</div>
-      Giftpose
+    <a class="navbar-brand" href="#" onclick="showPage('home'); return false;" aria-label="Giftpose home">
+      <img src="assets/giftpose-logo.png" alt="Giftpose" class="brand-logo" width="176" height="91" decoding="async">
     </a>
     <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -991,7 +1009,7 @@
             <div class="info-box">
               <strong>Giftpose Data Protection</strong><br>
               Email: privacy@giftpose.com<br>
-              Address: 123 Gifting Lane, London, EC1A 1BB, United Kingdom
+              Address: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ
             </div>
             <p>We may update this policy from time to time. We will notify you of significant changes by email or through a prominent notice on the Platform. Continued use after changes constitutes acceptance.</p>
             <p style="margin-top: 24px;">
@@ -1190,9 +1208,8 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
-        <a class="footer-brand" href="#" onclick="showPage('home'); return false;">
-          <div class="brand-icon" style="width:32px;height:32px;background:linear-gradient(135deg,#4caf50,#2d5c2d);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🎁</div>
-          Giftpose
+        <a class="footer-brand" href="#" onclick="showPage('home'); return false;" aria-label="Giftpose home">
+          <img src="assets/giftpose-logo.png" alt="Giftpose" class="brand-logo" width="210" height="109" decoding="async">
         </a>
         <p class="footer-tagline">Turn the items you don't need into meaningful gifts. We help you give with purpose and simplify the art of giving.</p>
       </div>
@@ -1220,7 +1237,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <script>document.write(new Date().getFullYear());</script> Giftpose. All rights reserved. Pawl Technologies is the parent company of Giftpose.</span>
+      <span>© <script>document.write(new Date().getFullYear());</script> Giftpose. All rights reserved. Pawl Technologies is the parent company of Giftpose.<br>71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</span>
       <div class="legal-links">
         <a href="privacy-policy.html" >Privacy Policy</a>
         <a href="terms-of-use.html">Terms of Use</a>
